@@ -5,6 +5,10 @@
 \usepackage[dvips]{epsfig}
 \newcommand{\kms}{{\ifmmode{{\mathrm{\,km\ s}^{-1}}}\else{\,km~s$^{-1}$}\fi}}
 \newcommand{\lya}{{Ly-$\alpha$~}}
+\newcommand{\ang}{{$\theta_{gal}$~}}
+\newcommand{\lognh}{{$\log{nH}$~}}
+\newcommand{\vel}{{$v_{out}$~}}
+
 \begin{document}
 
 \title{Titulo} 
@@ -47,6 +51,7 @@ As there is a lot of empty space inside the shell, it acts as a reflector of pho
 
 
 \section{Theoretical Frame}
+\label{sec:theo}
 In this section we are going to describe the two different models that are used in this project, that are able to reproduce a real and consistent line.\\
 
 ---------------------------------------------------------------------\\
@@ -56,7 +61,6 @@ MISSING: \\
 
 
 \subsection{Rotation Model}
-
 ---------------------------------------------------------------------\\
 MISSING: \\
 - Full explanation.\\
@@ -70,7 +74,7 @@ MISSING: \\
 MISSING:\\
 - Important equations and description of the parameters\\
 - Why we use ThinShel instead of Wind. Its advantages (explains redshift, avoids re-difussion, bounces).\\
-- Ref: Alvaro and Julian
+- Ref: Alvaro and Julian\\
 -----------------------------------------------------------------------\\
 
 \subsection{Joint Model}
@@ -80,6 +84,7 @@ MISSING: \\
 - Full explanation.\\
 - How exactly are this 2 mixed\\
 - Tell and make a detailed explanation of the free parameters that we are going to explore. \\
+- State the fixed parameters.\\
 -----------------------------------------------------------------------\\
 
 \section{Results}
@@ -91,7 +96,30 @@ MISSING: \\
 - What are the compact results.\\
 - Some plots.\\
 - Not a physical analysis yet. \\
+- Write 
 -----------------------------------------------------------------------\\
+
+\subsection{Influences of the Free Parameters}
+
+In order to study the influence of each of the three free parameters, we fix two of them and see how the final spectrum varies along the other one left. In each case we will state these changes.
+
+\subsubsection{Influence of the Galaxy Viewing Angle: \ang}
+
+If one sets fixed outflow \vel and \lognh in each case the viewing angle has the same effect: it increases proportionally the intensity. However this change is not that significant. The resulting spectrums are completely the same, but enlarged vertically by a small factor, being $90^\circ$ the most intense one and $0^\circ$ the opposite.\\
+
+\subsubsection{Influence of the Hydrogen Column Density: \lognh }
+
+The effect of the \lognh is the creation of 2 peaks: the left one very thin, tall and pronounced, and the right one very wide, small and soften. When the $log{nH}$ is increased, the left peak starts to decrease while mixing with the right one, decreasing ther height ratio until the left peak completely dissapears. The resulting spectrum, with high column density, is a wide single mountain with intensity significantly less than at the beginning. Fig. \ref{fig:influence_lognH} helps visualize this effect in a better way.\\
+
+\begin{figure}
+\begin{center}
+  \includegraphics[width=0.4\textwidth]{./figures/influence_lognH.png}
+\end{center}
+\caption{\textbf{Influence of Hydrogen Column Density:} The values of the fixed parameters are \vel = 100 \kms and \ang = 90$^\circ$. There are three stages of the \lognh value shown: initial, intermediate and final, with the values shown on the plot.
+\label{fig:influence_lognH}}  
+\end{figure}
+
+
 
 \section{Discussion}
 \label{sec:discussion}
@@ -102,6 +130,10 @@ MISSING: \\
 - Why is this result useful? \\
 - What possible implications can this model have?\\
 -----------------------------------------------------------------------\\
+
+Ideas: \\
+
+The decrease of the intensity while increasing the column density is caused because the column density is proportional to the absortion of light in the gas. The more $log{nH}$, the less photons get out of the outflow. 
 
 \section{Conclusions}
 \label{sec:conclusions}
@@ -176,16 +208,6 @@ P\'erez, F., \& Granger, B.~E. 2007, Computing in Science and Engineering, 9, 21
 %    b})^2}{1+{\rm cosh}\Big{[}\sqrt{\frac{2\pi^3}{27}}\frac{|(x
 %      -x_{\rm b})^3|}{a\tau_0}\Big{]}}\Bigg{)},
 %\end{displaymath} 
-%
-%Ejemplo de figura
-%
-%\begin{figure}
-%\begin{center}
-%  \includegraphics[width=0.4\textwidth]{ejemplofigura}
-%\end{center}
-%\caption{Ejemplo caption figura.  
-%    \label{fig:geometry}}  
-%\end{figure}
 %
 %Ejemplo tabla
 %
