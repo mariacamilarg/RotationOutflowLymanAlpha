@@ -1,13 +1,8 @@
-\documentclass{emulateapj}
-\usepackage{multirow,color,wrapfig,ulem}
-\usepackage {graphicx}
-\usepackage{graphics}
-\usepackage[dvips]{epsfig}
-\newcommand{\kms}{{\ifmmode{{\mathrm{\,km\ s}^{-1}}}\else{\,km~s$^{-1}$}\fi}}
-\newcommand{\lya}{{Ly-$\alpha$~}}
-\newcommand{\ang}{{$\theta_{gal}$~}}
-\newcommand{\lognh}{{$\log{nH}$~}}
-\newcommand{\vel}{{$v_{out}$~}}
+%Document Class
+\documentclass{latex/emulateapj}
+
+%Packages and Commands
+\include{latex/packages_commands}
 
 \begin{document}
 
@@ -23,9 +18,12 @@ No. 18A-10, Edificio Ip, Bogot\'a, Colombia}
 \email{je.forero@uniandes.edu.co}
 \email{jn.garavito57@uniandes.edu.co}
 
-\keywords{Lyman Alpha Emission,  } 
+\keywords{Lyman Alpha Emission,  ....MISSING....} 
+
 \begin{abstract}
-Here goes the abstract....
+\noindent ------------------------------------------------------------------------------------------------------------------------------------\\
+MISSING: The abstract\\
+------------------------------------------------------------------------------------------------------------------------------------\\
 \end{abstract}
 
 \section{Introduction}
@@ -50,7 +48,7 @@ After this photons escape the galaxy to empty space, they encounter a thin spher
 As there is a lot of empty space inside the shell, it acts as a reflector of photons. This means, that when one wants to comes out it is most likely to bounce inside the sphere several times before finally escaping. However it is not likely that the photon comes back again inside the galaxy, which helps that the first process does not have to be repeated, and both stages can be treated as consecutive, not simultaneous. \\
 
 
-\section{Theoretical Frame}
+\section{Theoretical Background}
 \label{sec:theo}
 In this section we are going to describe the two different models that are used in this project, that are able to reproduce a real and consistent \lya profile.\\
 
@@ -115,7 +113,7 @@ If one sets fixed outflow \vel and \lognh in each case the viewing angle has the
 
 \subsubsection{Influence of the Hydrogen Column Density: \lognh }
 
-The effect of the \lognh is the creation of 2 peaks: the left one very thin, tall and pronounced, and the right one very wide, small and soften. When the $log{nH}$ is increased, the left peak starts to decrease while mixing with the right one, decreasing ther height ratio until the left peak completely dissapears. The resulting spectrum, with high column density, is a wide single mountain with intensity significantly less than at the beginning. Fig. \ref{fig:influence_lognH} helps visualize this effect in a better way.\\
+The effect of the \lognh is the creation of 2 peaks: the left one very thin, tall and pronounced, and the right one very wide, small and soften. When the $log{nH}$ is increased, the left peak starts to decrease while mixing with the right one, decreasing their height ratio until the left peak completely dissapears. The resulting spectrum, with high column density, is a wide single mountain with intensity significantly less than at the beginning. Fig. \ref{fig:influence_lognH} helps visualize this effect in a better way.\\
 
 \begin{figure}
 \begin{center}
@@ -174,23 +172,8 @@ Alvaro Orsi, Cedric G. Lacey and Carlton M. Baugh)\\
 - Use the correct citation method. \\
 -----------------------------------------------------------------------\\
 
-\bibliographystyle{apj}
-\begin{thebibliography}{38}
-\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
-
-\bibitem[{{Forero-Romero} {et~al.}(2011){Forero-Romero}, {Yepes},
-  {Gottl{\"o}ber}, {Knollmann}, {Cuesta}, \& {Prada}}]{CLARA}
-{Forero-Romero}, J.~E., {Yepes}, G., {Gottl{\"o}ber}, S., {Knollmann}, S.~R.,
-  {Cuesta}, A.~J., \& {Prada}, F. 2011, \mnras, 415, 3666
-  
-\bibitem[{{Verhamme} {et~al.}(2006){Verhamme}, {Schaerer}, \&
-  {Maselli}}]{Verhamme06}
-{Verhamme}, A., {Schaerer}, D., \& {Maselli}, A. 2006, \aap, 460, 397
-
-\bibitem[{P\'erez \& Granger(2007)}]{IPython}
-P\'erez, F., \& Granger, B.~E. 2007, Computing in Science and Engineering, 9, 21
-
-\end{thebibliography}
+\bibliographystyle{latex/mn2e}
+\bibliography{references}
 
 \newpage
 
@@ -206,11 +189,6 @@ P\'erez, F., \& Granger, B.~E. 2007, Computing in Science and Engineering, 9, 21
 %Ejemplo referencia a figura
 %
 %In Fig. \ref{fig:geometry} se ve .....
-%
-%Ejemplo cita 
-%
-%Scape of  at line center, which has also been associated with escape of ionizing (LyC) photons
-%\citep{Behrens2014,2014arXiv1404.2958V}
 % 
 %Ejemplo display math
 %
