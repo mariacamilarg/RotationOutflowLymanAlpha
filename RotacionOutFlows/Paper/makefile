@@ -22,6 +22,8 @@ clean:
 		rm -f $(FILE_TEX).bbl
 		rm -f $(FILE_TEX).log
 		rm -f $(FILE_TEX).synctex.gz
+		rm -f $(FILE_TEX).blg
+		rm -f $(FILE_TEX)Notes.bib
 
 edit:
 		$(TEXEDIT) $(FILE_TEX).tex &
