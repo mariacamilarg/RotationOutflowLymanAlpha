@@ -50,23 +50,43 @@ MISSING: The abstract\\
 \section{Introduction}
 \label{sec:intro}
 
-The Lyman-Alpha emission line is the spectral line produced when an electron goes from the second energy level to the first, loosing energy and emmiting it as light. When this energy decays are seen in Hydrogen atoms, the wavelenght of the \lya line is 121.567 nm. The detection of this emission line is a main tecnique in extragalactic astronomy because galaxies with a strong emission of this (called Lyman Alpha Emitters - LAEs) are used to study the evolution of the universe in big scale. \\
+The Lyman-Alpha emission line is the spectral line produced when an electron goes from the second energy level to the first,
+loosing energy and emmiting it as light. When this energy decays are seen in Hydrogen atoms, the wavelenght of the \lya line
+is 121.567 nm. The detection of this emission line is a main tecnique in extragalactic astronomy because galaxies with a
+strong emission of this (called Lyman Alpha Emitters - LAEs) are used to study the evolution of the universe in big scale. \\
 
-LAEs are young and far away galaxies with most of its matter composed by Hydrogen atoms, being the rest heavier elements, like Iron, produced by growing stars burning their material. Then, this spectral line tells very important information about the galaxy, most of it actually, which creates a motivation to find a way to model the \lya line according to certain free parameters that vary from a galaxy to another and that can be obtained from observations. \\
+LAEs are young and far away galaxies with most of its matter composed by Hydrogen atoms, being the rest heavier elements,
+like Iron, produced by growing stars burning their material. Then, this spectral line tells very important information about
+the galaxy, most of it actually, which creates a motivation to find a way to model the \lya line according to certain free
+parameters that vary from a galaxy to another and that can be obtained from observations. \\
 
-Our purpose in this paper is then to make a theoretical model, based on radiative transfer simulations, that use MonteCarlo computational methods to emulate how the line profile is going to come out of the galaxy if it is rotating and has a surrounding outflow, both of this phenomena characterized by key parameters that are going to be described further on the paper. \\
+Our purpose in this paper is then to make a theoretical model, based on radiative transfer simulations, that use MonteCarlo
+computational methods to emulate how the line profile is going to come out of the galaxy if it is rotating and has a surrounding
+outflow, both of this phenomena characterized by key parameters that are going to be described further on the paper. \\
 
 ---------------------------------------------------------------------\\
 MISSING: What has been done related to this?\\
 -----------------------------------------------------------------------\\
 
-As it has been described, the main purpose of this project is to mix a rotating galaxy with an external outflow surrounding it and analyze the resulting spectrum. The rotation model for the LAE consists on a sphere with an homogeneous mixture of dust and hydrogen at a constant temperature undergoing a solid-body rotation. The spectrum then depends on the maximum velocity of the sphere, the neutral hydrogen optical depths and the viewing angle. What happens is that photons are emmited from a central distribution of gas and escape the sphere after a radiative transfer process that ends at the border.\\
+As it has been described, the main purpose of this project is to mix a rotating galaxy with an external outflow surrounding
+it and analyze the resulting spectrum. The rotation model for the LAE consists on a sphere with an homogeneous mixture of
+dust and hydrogen at a constant temperature undergoing a solid-body rotation. The spectrum then depends on the maximum velocity
+of the sphere, the neutral hydrogen optical depths and the viewing angle. What happens is that photons are emmited from a central
+distribution of gas and escape the sphere after a radiative transfer process that ends at the border.\\
 
-In this model, rotation does not induce any spatial anisotropy in the integrated line flux, the escape fraction or the average number of scatterings, which led to the creation of an analytic approximation for the galaxy spectrum. This mathematical expression helps to minimize the computational costs and lets try with several parameters without spending great amounts of time running the code. \\
+In this model, rotation does not induce any spatial anisotropy in the integrated line flux, the escape fraction or the average
+number of scatterings, which led to the creation of an analytic approximation for the galaxy spectrum. This mathematical expression
+helps to minimize the computational costs and lets try with several parameters without spending great amounts of time running the code. \\
 
-After this photons escape the galaxy to empty space, they encounter a thin spherical shell of matter at a certain radius from the center. That material is the outflow of the LAE, created mainly by starbursts which composition is characterized with the parameters of Hydrogen column density and metallicity. Besides its components, the galactic outflow is also defined by an expanding constant velocity that affects the redshift of the photons.\\
+After this photons escape the galaxy to empty space, they encounter a thin spherical shell of matter at a certain radius from the
+center. That material is the outflow of the LAE, created mainly by starbursts which composition is characterized with the parameters
+of Hydrogen column density and metallicity. Besides its components, the galactic outflow is also defined by an expanding constant
+velocity that affects the redshift of the photons.\\
 
-As there is a lot of empty space inside the shell, it acts as a reflector of photons. This means, that when one wants to comes out it is most likely to bounce inside the sphere several times before finally escaping. However it is not likely that the photon comes back again inside the galaxy, which helps that the first process does not have to be repeated, and both stages can be treated as consecutive, not simultaneous. \\
+As there is a lot of empty space inside the shell, it acts as a reflector of photons. This means, that when one wants to comes out it
+is most likely to bounce inside the sphere several times before finally escaping. However it is not likely that the photon comes back
+again inside the galaxy, which helps that the first process does not have to be repeated, and both stages can be treated as consecutive,
+  not simultaneous. \\
 
 
 \section{Theoretical Background}
