@@ -1,12 +1,33 @@
 %Document Class
 \documentclass{latex/emulateapj}
+\usepackage{multirow,color,wrapfig,ulem}
 
 %Packages and Commands
 \include{latex/packages_commands}
+\usepackage{multirow,color,wrapfig,ulem}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage[dvips]{epsfig}
+\newcommand{\avg}[1]{\langle{#1}\rangle}
+\newcommand{\nscatt}{\langle N_{\rm  scatt}\rangle}
+\newcommand{\ly}{{\ifmmode{{\rm Ly}\alpha~}\else{Ly$\alpha$~}\fi}}
+\newcommand{\hMpc}{{\ifmmode{h^{-1}{\rm Mpc}}\else{$h^{-1}$Mpc }\fi}}
+\newcommand{\hGpc}{{\ifmmode{h^{-1}{\rm Gpc}}\else{$h^{-1}$Gpc }\fi}}
+\newcommand{\hmpc}{{\ifmmode{h^{-1}{\rm Mpc}}\else{$h^{-1}$Mpc }\fi}}
+\newcommand{\hkpc}{{\ifmmode{h^{-1}{\rm kpc}}\else{$h^{-1}$kpc }\fi}}
+\newcommand{\hMsun}{{\ifmmode{h^{-1}{\rm{M_{\odot}}}}\else{$h^{-1}{\rm{M_{\odot}}}$}\fi}}
+\newcommand{\hmsun}{{\ifmmode{h^{-1}{\rm{M_{\odot}}}}\else{$h^{-1}{\rm{M_{\odot}}}$}\fi}}
+\newcommand{\Msun}{{\ifmmode{{\rm {M_{\odot}}}}\else{${\rm{M_{\odot}}}$}\fi}}
+\newcommand{\msun}{{\ifmmode{{\rm {M_{\odot}}}}\else{${\rm{M_{\odot}}}$}\fi}}
+%\newcommand{\lya}{{Lyman $\alpha$~}}
+\newcommand{\clara}{{\texttt{CLARA}}~}
+\newcommand{\rand}{{\ifmmode{{\mathcal{R}}}\else{${\mathcal{R}}$ }\fi}}
+\newcommand{\hs}{{\hspace{1mm}}}
+%\newcommand{\kms}{{\ifmmode{{\mathrm{\,km\ s}^{-1}}}\else{\,km~s$^{-1}$}\fi}}
 
 \begin{document}
 
-\title{Titulo} 
+\title{Titulo}
 \shorttitle{shorttitle}
 
 \shortauthors{Remolina-Gutierrez, Forero-Romero \&Garavito-Camargo}
@@ -18,7 +39,7 @@ No. 18A-10, Edificio Ip, Bogot\'a, Colombia}
 \email{je.forero@uniandes.edu.co}
 \email{jn.garavito57@uniandes.edu.co}
 
-\keywords{Lyman Alpha Emission,  ....MISSING....} 
+\keywords{Lyman Alpha Emission,  ....MISSING....}
 
 \begin{abstract}
 \noindent ------------------------------------------------------------------------------------------------------------------------------------\\
@@ -50,7 +71,9 @@ As there is a lot of empty space inside the shell, it acts as a reflector of pho
 
 \section{Theoretical Background}
 \label{sec:theo}
-In this section we are going to describe the two different models that are used in this project, that are able to reproduce a real and consistent \lya profile.\\
+In this section we describe the two different models that are used in this project,
+that are able to reproduce a real and consistent \lya profile. As first we implement
+the rotation followed by an outflow.\\
 
 ---------------------------------------------------------------------\\
 MISSING: \\
@@ -58,12 +81,51 @@ MISSING: \\
 -----------------------------------------------------------------------\\
 
 \subsection{Rotation Model}
----------------------------------------------------------------------\\
-MISSING: \\
-- Full explanation.\\
-- Ref: Jaime And Juan Nicolas\\
------------------------------------------------------------------------\\
 
+We use the simplified rotation model developed by [garavito-camargo et al]
+in which a rotating galaxy is modeled as a solid rotating sphere, with a homogeneous mixture
+of hydrogen and dust. Photons can be initially at the center or can be
+homogeneously distributed inside the sphere. The equations governing this
+ solid-body rotation sphere in which the axys of rotation is defined to be allign
+ with the $z$-axys are:
+
+
+\begin{equation}
+    v_{x}=-\frac{y}{R}V_{\rm max}, \label{subeq1}
+\end{equation}
+\begin{equation}
+    v_{y}=\frac{x}{R}V_{\rm max}, \label{subeq2}
+\end{equation}
+\begin{equation}
+    v_{z}=0, \label{subeq3}
+\end{equation}
+%
+
+Where $R$ is the radius of the sphere and $V_{\rm max}$ is the linear
+velocity at the sphere's surface. The minus/plus sign in the
+$x$/$y$-component of the velocity indicates the direction of
+rotation. In this case we take the angular velocity in the same
+direction as the $\hat{k}$ unit vector.
+
+In this work we use the analytical expression for rotation derived in [garavito-camargo et al]
+where a rotating sphere can be seen as a static sphere in the laboratory
+frame with a bulk velocity difference in each surface element with respect
+to a distant observer. With the previous analysis the outcoming spectra can be
+expressed as:
+
+\begin{equation}
+J(x,i) \approx 2\pi \int_0^Rdb \hs b
+\int_0^{2\pi}d\phi \hs J(x,b,\phi,i),
+\end{equation}
+
+Where $J(x, b, \phi, i)$ is the spectrum of the flux emerging from the
+surface at point $(b, \phi)$ and is expressed as:
+
+\begin{equation}
+J(x,b,\phi,i)=\frac{\sqrt{\pi}}{\sqrt{24}a\tau_0}\Bigg{(}\frac{(x-x_{\rm
+    b})^2}{1+{\rm cosh}\Big{[}\sqrt{\frac{2\pi^3}{27}}\frac{|(x
+      -x_{\rm b})^3|}{a\tau_0}\Big{]}}\Bigg{)}.
+\end{equation}
 
 
 
@@ -111,7 +173,7 @@ If one sets fixed outflow \vel and \lognh in each case the viewing angle has the
   \includegraphics[width=0.4\textwidth]{./figures/influence_ang.png}
 \end{center}
 \caption{\textbf{Influence of Galaxy Viewing Angle:} The values of the fixed parameters are \vel = 100 \kms and \lognh = 21.3125. The 3 possible angles are shown in the plot with different colors. The increase is visible as well as its small enlargement factor.\\
-\label{fig:influence_ang}}  
+\label{fig:influence_ang}}
 \end{figure}
 
 \subsubsection{Influence of the Hydrogen Column Density: \lognh }
@@ -123,7 +185,7 @@ The effect of the \lognh is the creation of 2 peaks: the left one very thin, tal
   \includegraphics[width=0.4\textwidth]{./figures/influence_lognH.png}
 \end{center}
 \caption{\textbf{Influence of Hydrogen Column Density:} The values of the fixed parameters are \vel = 100 \kms and \ang = 90$^\circ$. There are three stages of the \lognh value shown: initial, intermediate and final, with the values shown on the plot.\\
-\label{fig:influence_lognH}}  
+\label{fig:influence_lognH}}
 \end{figure}
 
 \subsubsection{Influence of the Outflow Expanding Velocity: \vel }
@@ -145,7 +207,7 @@ MISSING: \\
 
 Ideas: \\
 
-The decrease of the intensity while increasing the column density is caused because the column density is proportional to the absortion of light in the gas. The more $log{nH}$, the less photons get out of the outflow. 
+The decrease of the intensity while increasing the column density is caused because the column density is proportional to the absortion of light in the gas. The more $log{nH}$, the less photons get out of the outflow.
 
 \section{Conclusions}
 \label{sec:conclusions}
@@ -175,7 +237,7 @@ Alvaro Orsi, Cedric G. Lacey and Carlton M. Baugh)\\
 - Use the correct citation method. \\
 -----------------------------------------------------------------------\\
 
-\bibliographystyle{latex/mn2e}
+\bibliographystyle{apj}
 \bibliography{references}
 
 \newpage
@@ -184,7 +246,7 @@ Alvaro Orsi, Cedric G. Lacey and Carlton M. Baugh)\\
 %\label{sec:implementation}
 %
 %Ejemplo de ecuacion
-%  
+%
 %\begin{equation}
 %    v_{x}=-\frac{y}{R}V_{\rm max}, \label{subeq1}
 %\end{equation}
@@ -192,14 +254,14 @@ Alvaro Orsi, Cedric G. Lacey and Carlton M. Baugh)\\
 %Ejemplo referencia a figura
 %
 %In Fig. \ref{fig:geometry} se ve .....
-% 
+%
 %Ejemplo display math
 %
 %\begin{displaymath}
 %J(x,b,\phi,i)=\frac{\sqrt{\pi}}{\sqrt{24}a\tau_0}\Bigg{(}\frac{(x-x_{\rm
 %    b})^2}{1+{\rm cosh}\Big{[}\sqrt{\frac{2\pi^3}{27}}\frac{|(x
 %      -x_{\rm b})^3|}{a\tau_0}\Big{]}}\Bigg{)},
-%\end{displaymath} 
+%\end{displaymath}
 %
 %Ejemplo tabla
 %
@@ -208,8 +270,8 @@ Alvaro Orsi, Cedric G. Lacey and Carlton M. Baugh)\\
 %\begin{tabular}{c cccccc}
 %\hline \hline
 %Source & $\tau_{H}$ & &  $\ V_{\rm max}$& & \\
-%Distribution& &    & (\kms) & & \\ 
-%& & 0 & 100 &200 & 300\\ \hline 
+%Distribution& &    & (\kms) & & \\
+%& & 0 & 100 &200 & 300\\ \hline
 %Homogeneous & $10^{5}$& 0.263 &  0.263 &  0.263 &  0.263  \\
 %            & $10^{6}$ & 0.291 &   0.292 &  0.293 &  0.293 \\
 %Central & $10^{5}$ &  0.096 & 0.096 &  0.096 & 0.096 \\
@@ -217,7 +279,7 @@ Alvaro Orsi, Cedric G. Lacey and Carlton M. Baugh)\\
 %\hline
 %\end{tabular}
 %\caption{
-% Ejemplo de tabla. } 
+% Ejemplo de tabla. }
 %\label{table:escape}
 %\end{center}
 %\end{table}
