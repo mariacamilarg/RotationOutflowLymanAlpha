@@ -115,7 +115,15 @@ The second reason is because as the space between the shell and the galaxy is sa
 
 \subsection{Joint Model}
 
-The joint model consists of combining the two models that were just explained. A rotating spherical galaxy is placed at the center with a thin shell outflow surrounding it. What happens is that the photons that escaped the galaxy enter now into the outflow with the same radial direction that they came out with. At the end only a fraction of those manage to get out of the outflow and their wavelengths are measured to find the final spectrum.\\
+The joint model consists of combining the two models that were just explained. A rotating spherical galaxy is placed at the center with a thin shell outflow surrounding it as seen in Fig. \ref{fig:model}. What happens is that the photons that escaped the galaxy enter now into the outflow with the same radial direction that they came out with. At the end only a fraction of those manage to get out of the outflow and their wavelengths are measured to find the final spectrum.\\
+
+\begin{figure}[h!]
+\begin{center}
+  \includegraphics[width=0.3\textwidth]{./figures/model.png}
+\end{center}
+\caption{\textbf{Model:} A central rotating galaxy surrounded by an expanding thin shell outflow.\\
+\label{fig:model}}
+\end{figure}
 
 In order to simulate all the possible cases we set some key parameters for the program to vary, and some others fixed which are defined by the characteristics of LAEs. This are chosen as follows.\\
 
@@ -132,15 +140,17 @@ We have then 3 parameters left that are going to vary along a wide range. These 
 
 \section{Results}
 \label{sec:results}
-Here goes the results....
+
+The results of this project consist of emulating a LAE spectrum basing on its physical characteristics defined by the 3 free parameters we stated before. When defined the combination of those three. \\
 
 ---------------------------------------------------------------------\\
 MISSING: \\
 - What are the compact results.\\
-- Some plots.\\
 - Not a physical analysis yet. \\
 - Write better (prettier)\\
 -----------------------------------------------------------------------\\
+
+In the following subsection each free parameter is explained deeper. \\
 
 \subsection{Influences of the Free Parameters}
 
@@ -148,9 +158,9 @@ In order to study the influence of each of the three free parameters, we fix two
 
 \subsubsection{Influence of the Galaxy Viewing Angle: \ang}
 
-If one sets fixed outflow \vel and \lognh in each case the viewing angle has the same effect: it increases proportionally the intensity. However this change is not that significant. The resulting spectra are completely the same, but enlarged vertically by a small factor. Fig. \ref{fig:influence_ang} helps visualize this effect in a better way.\\
+If one sets fixed outflow \vel and \lognh in each case the viewing angle has the same effect: it increases proportionally the intensity. However this change is not that significant. The resulting spectra are completely the same, but enlarged vertically by a small factor. Fig. \ref{fig:influence_ang} helps visualize this effect in a better way.
 
-\begin{figure}
+\begin{figure}[h!]
 \begin{center}
   \includegraphics[width=0.5\textwidth]{./figures/influence_ang.png}
 \end{center}
@@ -160,9 +170,9 @@ If one sets fixed outflow \vel and \lognh in each case the viewing angle has the
 
 \subsubsection{Influence of the Outflow Hydrogen Column Density: \lognh }
 
-The effect of the \lognh is the creation of 2 peaks: the left one very thin, tall and pronounced, and the right one very wide, small and soften. When the $log{nH}$ is increased, the left peak starts to decrease while mixing with the right one, decreasing their height ratio until the left peak completely disappears. The resulting spectrum, with high column density, is a wide single mountain with intensity significantly less than at the beginning. Fig. \ref{fig:influence_lognH} helps visualize this effect in a better way.\\
+The effect of the \lognh is the creation of 2 peaks: the left one very thin, tall and pronounced, and the right one very wide, small and soften. When the $log{nH}$ is increased, the left peak starts to decrease while mixing with the right one, decreasing their height ratio until the left peak completely disappears. The resulting spectrum, with high column density, is a wide single mountain with intensity significantly less than at the beginning. Fig. \ref{fig:influence_lognH} helps visualize this effect in a better way.
 
-\begin{figure}
+\begin{figure}[h!]
 \begin{center}
   \includegraphics[width=0.5\textwidth]{./figures/influence_lognH.png}
 \end{center}
@@ -172,18 +182,16 @@ The effect of the \lognh is the creation of 2 peaks: the left one very thin, tal
 
 \subsubsection{Influence of the Outflow Expanding Velocity: \vel }
 
----------------------------------------------------------------------\\
-MISSING: \\
-- Influence Outflow Velocity.\\
------------------------------------------------------------------------\\
+The effect of this parameter consists in a shift of the initial spectrum in the column density. The more \vel the outflow has, the more the spectrum simulates the previous velocity but with a greater \lognh. If one compares with Fig. \ref{fig:influence_lognH} the similarities are really clear. 
 
-\begin{figure}
+\begin{figure}[h!]
 \begin{center}
   \includegraphics[width=0.5\textwidth]{./figures/influence_vel.png}
 \end{center}
-\caption{\textbf{Influence of Outflow Expanding Velocity:} The values of the fixed parameters are \lognh = 20.0625 and \ang = 90$^\circ$. MISSIIIIIIING.\\
+\caption{\textbf{Influence of Outflow Expanding Velocity:} The values of the fixed parameters are \lognh = 20.0625 and \ang = 90$^\circ$. If one increases \lognh for an outflow with \vel = 100 \kms it will create similar spectra to these in certain points.\\
 \label{fig:influence_vel}}
 \end{figure}
+
 
 \section{Discussion}
 \label{sec:discussion}
@@ -205,18 +213,14 @@ Here goes the conclusions....
 
 \section*{Acknowledgments}
 
-To ...\\
+We acknowledge Alvaro Orsi and Julian Mejia for collaborating with us offering their time, advice and especially data. We used their outflow simulations in order to get our results.\\
 
-The data, source code and instructions to
-replicate the results of this paper can be found
-here {\texttt{https://github.com/mariacamilaremolinagutierrez/ LymanAlpha/}}.
-Most of our code benefits from the work of the IPython and Matplotlib
-communities \citep{IPython,matplotlib}.\\
+The data, source code and instructions to replicate the results of this paper can be found here {\texttt{https://github.com/mariacamilaremolinagutierrez/ LymanAlpha/}}.
+Most of our code benefits from the work of the IPython and Matplotlib communities \citep{IPython,matplotlib}.\\
 
 ---------------------------------------------------------------------\\
 MISSING: \\
-- Help from Alvaro and Julian: data, explanations, advice and collaboration. \\
-- Soooo many more acknowledgments.\\
+- More acknowledgments.\\
 -----------------------------------------------------------------------\\
 
 \bibliographystyle{latex/apj}
