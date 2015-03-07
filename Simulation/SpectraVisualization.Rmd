@@ -10,25 +10,37 @@ runtime: shiny
 ```{r, echo=FALSE}
 
 inputPanel(
-  selectInput("v_galaxy", label = "Galaxy Velocity:",
-              choices = c(0, 20, 100, 200), selected = 0),
+  sliderInput("v_galaxy", label = "Galaxy Velocity:",
+              min = 1, max = 4, value = 1, step = 1),
   
   sliderInput("v_outflow", label = "Outflow Velocity:",
               min = 100, max = 500, value = 100, step = 100),
   
-  selectInput("lognh_outflow", label = "Outflow Column Density:",
-              choices = c(20.0, 20.0625, 20.125, 20.1875, 20.25, 20.3125, 20.375, 20.4375, 20.5, 20.5625, 20.625, 20.6875, 20.75, 20.8125, 20.875, 20.9375, 21.0, 21.0625, 21.125, 21.1875, 21.25, 21.3125, 21.375, 21.4375, 21.5, 21.5625, 21.625, 21.6875, 21.75, 21.8125, 21.875, 21.9375, 22.0, 22.0625, 22.125, 22.1875, 22.25, 22.3125, 22.375, 22.4375, 22.5), selected = 20.0)
+  sliderInput("lognh_outflow", label = "Outflow Column Density:",
+              min = 1, max = 41, value = 1, step = 1)
 )
 
 renderPlot({
+  
+  library(ggplot2)
+  
+  v_galaxy_options <- c(0, 20, 100, 200)
+  
+  lognh_options <- c(20.0, 20.0625, 20.125, 20.1875, 20.25, 20.3125, 20.375, 20.4375, 20.5, 20.5625, 20.625, 20.6875, 20.75, 20.8125, 20.875, 20.9375, 21.0, 21.0625, 21.125, 21.1875, 21.25, 21.3125, 21.375, 21.4375, 21.5, 21.5625, 21.625, 21.6875, 21.75, 21.8125, 21.875, 21.9375, 22.0, 22.0625, 22.125, 22.1875, 22.25, 22.3125, 22.375, 22.4375, 22.5)
+  
   spectrum <- read.csv("./data/galaxyoutflow.csv")
   
-  spectrum_sub <- spectrum[spectrum$v_gal==input$v_galaxy,]
-  spectrum_sub <- spectrum_sub[spectrum_sub$v_out==input$v_outflow,]
-  spectrum_sub <- spectrum_sub[spectrum_sub$lognh==input$lognh_outflow,]
+  vg <- v_galaxy_options[input$v_galaxy]
+  vo <- input$v_outflow
+  lnh <- lognh_options[input$lognh_outflow]
   
-  plot(spectrum_sub$x, spectrum_sub$y, type = "l", col=30,
-       xlim=c(1210, 1232), ylim=c(0, 7100), 
-       xlab = "Lambda", ylab = "Intensity")
-})
+  spectrum_sub <- spectrum[spectrum$v_gal==vg,]
+  spectrum_sub <- spectrum_sub[spectrum_sub$v_out==vo,]
+  spectrum_sub <- spectrum_sub[spectrum_sub$lognh==lnh,]
+  
+  text = paste(c("v_out =", vo, "km/s \n log(nH) =", lnh, "\n v_gal =", vg, "km/s\n"), collapse=" ")
+    
+  ggplot(spectrum_sub, aes(x=x,y=y)) + geom_line(col = 30, lw = 2) + labs(title=text, x="Lambda (A)", y="Intensity (Arbitrary Units)") + xlim(1210, 1232) + ylim(0, 7100) + theme(plot.title = element_text(hjust = 1, vjust = 1))
+  
+  })
 ```
