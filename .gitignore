@@ -1,0 +1,9 @@
+*.out
+*.aux
+*~
+*Notes.bib
+*.bbl
+*.blg
+*.bib
+*.log
+*.DS_Store
