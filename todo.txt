@@ -1,6 +1,6 @@
 To Do:
 
-- Edit AnalyticSpectra files with new analytic_solution.c
+- Change parameters in paper
 - Change plots in paper (axes, colors, lines, good visualization)
-- Change viewing angle for galaxy rotation velocity
+- Compare observations with model
 
