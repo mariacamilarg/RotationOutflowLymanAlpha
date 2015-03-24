@@ -8,13 +8,14 @@ runtime: shiny
 ## Galaxy + Outflow Spectra
 
 ```{r, echo=FALSE}
+library(shiny)
 
 inputPanel(
-  sliderInput("v_galaxy", label = "Galaxy Velocity:",
-              min = 1, max = 4, value = 1, step = 1),
+  selectInput("v_galaxy", label = "Galaxy Velocity:", 
+              choices = c("60 km/s" = 60, "125 km/s" = 125), ),
   
-  sliderInput("v_outflow", label = "Outflow Velocity:",
-              min = 100, max = 500, value = 100, step = 100),
+  selectInput("v_outflow", label = "Outflow Velocity:", 
+              choices = c("100 km/s" = 100, "200 km/s" = 200), ),
   
   sliderInput("lognh_outflow", label = "Outflow Column Density:",
               min = 1, max = 41, value = 1, step = 1)
@@ -23,14 +24,12 @@ inputPanel(
 renderPlot({
   
   library(ggplot2)
-  
-  v_galaxy_options <- c(0, 20, 100, 200)
-  
+
   lognh_options <- c(20.0, 20.0625, 20.125, 20.1875, 20.25, 20.3125, 20.375, 20.4375, 20.5, 20.5625, 20.625, 20.6875, 20.75, 20.8125, 20.875, 20.9375, 21.0, 21.0625, 21.125, 21.1875, 21.25, 21.3125, 21.375, 21.4375, 21.5, 21.5625, 21.625, 21.6875, 21.75, 21.8125, 21.875, 21.9375, 22.0, 22.0625, 22.125, 22.1875, 22.25, 22.3125, 22.375, 22.4375, 22.5)
   
   spectrum <- read.csv("./data/galaxyoutflow.csv")
   
-  vg <- v_galaxy_options[input$v_galaxy]
+  vg <- input$v_galaxy
   vo <- input$v_outflow
   lnh <- lognh_options[input$lognh_outflow]
   
@@ -40,7 +39,7 @@ renderPlot({
   
   text = paste(c("v_out =", vo, "km/s \n log(nH) =", lnh, "\n v_gal =", vg, "km/s\n"), collapse=" ")
     
-  ggplot(spectrum_sub, aes(x=x,y=y)) + geom_line(col = 30, lw = 2) + labs(title=text, x="Lambda (A)", y="Intensity (Arbitrary Units)") + xlim(1210, 1232) + ylim(0, 7100) + theme(plot.title = element_text(hjust = 1, vjust = 1))
+  ggplot(spectrum_sub, aes(x=x,y=y)) + geom_line(col = 30, lw = 2) + labs(title=text, x="Velocity (km/s)", y="Intensity (Arbitrary Units)") + xlim(-1000, 4010) + ylim(0, 6500) + theme(plot.title = element_text(hjust = 1, vjust = 1))
   
   })
 ```
