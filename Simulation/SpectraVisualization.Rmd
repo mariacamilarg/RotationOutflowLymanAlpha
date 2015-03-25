@@ -12,7 +12,7 @@ library(shiny)
 
 inputPanel(
   selectInput("v_galaxy", label = "Galaxy Velocity:", 
-              choices = c("60 km/s" = 60, "125 km/s" = 125), ),
+              choices = c("0 km/s" = 0, "60 km/s" = 60, "125 km/s" = 125), ),
   
   selectInput("v_outflow", label = "Outflow Velocity:", 
               choices = c("100 km/s" = 100, "200 km/s" = 200), ),
