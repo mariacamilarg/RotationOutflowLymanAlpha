@@ -1,4 +1,4 @@
-# LARS05 (Velocity Km/s, Flux in mJy)
+# LARS05 (Velocity Km/s, Flux in mJy) z=0.034
 9581.9	-3.038
 9581.9	-3.038
 9581.9	-3.038
