@@ -3,4 +3,5 @@ To Do:
 - Change parameters in paper
 - Change plots in paper (axes, colors, lines, good visualization)
 - Compare observations with model
+- Update peaks assymetry information
 
