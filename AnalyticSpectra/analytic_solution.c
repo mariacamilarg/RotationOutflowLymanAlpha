@@ -2,7 +2,7 @@
 #include <math.h>
 #include <stdlib.h>
 #define NPOINTS 1000
-#define NPOINTSX 400
+#define NPOINTSX 200
 #define TEMP 10000.0
 #define R 1.0
 #define PI 3.141592653589793238462643383279502884197169
