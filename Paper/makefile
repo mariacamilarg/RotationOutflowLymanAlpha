@@ -21,7 +21,6 @@ $(FILE_PDF) : $(FILE_TEX) references.bib
 	$(LATEX) $(FILE_TEX)
 
 clean:
-		rm -f $(FILE_NAME).pdf
 		rm -f $(FILE_NAME).aux
 		rm -f $(FILE_NAME).out
 		rm -f $(FILE_NAME).bbl
