@@ -46,74 +46,97 @@ a rotating spherical galaxy with homogeneous gas mixture and analyzes that impac
 
 Special attention have been devoted to model the presence of outflows in the galaxy, motivated by previous observational studies. Outflows are a consequence of the interstellar medium (ISM) being ejected from the galaxy due to supernova explosions. Here different models have attempt to simulate more realistic situations involving shell models and cavities. \citep{Behrens2014}. Despite the fact that outflows have been broadly studied, rotation should also be present in this galaxies. The joint effect of the above properties should have a direct impact on the morphology of the \lya line. This is the subject of this work. \\
 
-CAMBIAR ESTOOOOO\\
-
-We propose a simplified model in which the galaxy is modeled as an sphere undergoing solid-body rotation, with an homogeneous mixture of dust and hydrogen at a constant temperature. The solid-body rotation does not induce any spatial anisotropy in the integrated line flux, the escape fraction or in the average number of scatterings. This symmetry allows to the creation of an analytic approximation for the galaxy spectrum  proposed, see \cite{Garavito14} for details. In this model the optical depth $\tau_{H}$, the  rotation velocity $V_{max}$ and the inclination angle $\theta$ are free parameters. \\
+We propose a simplified model in which the galaxy is modeled as an sphere undergoing solid-body rotation, with an homogeneous mixture of dust and hydrogen at a constant temperature, that is also expanding in the radial direction due to outflows. In this model the optical depth \tauh, the  rotation velocity \vrot and the outflow velocity \vout are free parameters. \\
  
-The outcoming spectra of the rotating galaxy is then affected by a symmetric thin shell of expanding gas at a constant velocity following the model proposed by \cite{2014arXiv1404.2958V, Orsi12}.   \\ 
-
+CAMBIAR ESTOOOOO\\ 
+ 
 This paper is structured as follows. In \S \ref{sec:theo} we explain in detail the model of rotation and outflow that we use as well and our joint model (Rotation \& Outflow). In \S \ref{sec:results} we present the results of our model. In \S \ref{sec:discussion} we compare our results with recent observations of LAEs with special attention of those morphologies that present features of galaxy rotation and outflows. In the latest section we present our conclusions.  \\
 
 \section{Theoretical Background}
 \label{sec:theo}
-In this section we describe the two different models that together are used to reproduce a real and consistent \lya profile. The first one is a rotation model for the galaxy and the second is a thin shell model for the outflow. \\ 
+In this section we describe the proposed model used to reproduce a real and consistent \lya profile. \\ 
 
-\subsection{Rotation Model}
+\subsection{Model}
 
-We use the simplified rotation model developed by \citep{Garavito14} in which a rotating galaxy is modeled as a solid rotating sphere, with a homogeneous mixture of hydrogen and dust. Photons are initially at the center of the sphere. The equations governing this solid-body rotation sphere in which the axis of rotation is defined to be align with the $z$-axis are: \\
-
-CAMBIAR ESTOOOOO
+We use the simplified rotation model developed by \citep{Garavito14} in which a rotating galaxy is modeled as a solid rotating sphere, with a homogeneous mixture of hydrogen and dust. There is also the radial expanding velocity. Photons are initially at the center of the sphere. These two velocities are added by components as follows. The equations governing this movement in which the axis of rotation is defined to be align with the $z$-axis are: \\
 
 \begin{equation}
-v_{x}=-\frac{y}{R}V_{\rm max}, \label{subeq1}
+v_{x}=\frac{x}{R}v_{\rm out}-\frac{y}{R}v_{\rm rot}, \label{subeq1}
 \end{equation}
 
 \begin{equation}
-v_{y}=\frac{x}{R}V_{\rm max}, \label{subeq2}
+v_{y}=\frac{y}{R}v_{\rm out}+\frac{x}{R}v_{\rm rot}, \label{subeq2}
 \end{equation}
 
 \begin{equation}
-v_{z}=0, \label{subeq3}
+v_{z}=\frac{z}{R}v_{\rm out}, \label{subeq3}
 \end{equation}
 
-Where $R$ is the radius of the sphere and $V_{\rm max}$ is the linear velocity at the sphere's surface. The minus/plus sign in the $x$/$y$-component of the velocity indicates the direction of rotation. In this case we take the angular velocity in the same direction as the $\hat{k}$ unit vector. \\
+Where $R$ is the radius of the sphere. The minus/plus sign in the $x$/$y$-component of the rotation velocity part indicates the direction of rotation. In this case we take the angular velocity in the same direction as the $\hat{k}$ unit vector. \\
 
-(...) At the end only a fraction of those manage to get out of the outflow and their wavelengths are measured to find the
-final spectrum. In order to simulate all the possible cases we set some key parameters for the program to vary, and some others fixed which are defined by the characteristics of LAEs. This are chosen as follows.\\
+CAMBIAR ESTOOOOO\\ 
 
-\subsubsection{Galaxy Parameters}
+(...) At the end only a fraction of those manage to get out of the outflow and their wavelengths are measured to find the final spectrum. In order to simulate all the possible cases we set some key parameters for the program to vary, and some others fixed which are defined by the characteristics of LAEs. This are chosen as follows.\\
 
-Our aim is to provide a realistic baseline to compare against observations of LAES at $z\sim 3$. It has been found by analysis of the abundance and angular correlation function that LAES reside in DM halos of masses in the range $10^{10}-10^{11}$\Msun \cite{WalkerSoler2012}. This mass range corresponds to maximum circular velocities in the range $60-125$\kms and a median halo scale radius of $15$kpc. \footnote{These results were found using the  N-body data available in \url{www.cosmosim.org}}. \\
+\subsection{Galaxy Parameters}
 
-These galaxies have gas fractions close to $20\%$ \citep{Narayanan2012}. We approximate that the hydrogen content is
-$20\%$ the total baryonic content from the cosmological baryon to dark matter  abundances $\Omega_b/\Omega_{dm}=0.1825$ \citep{Planck2015}, multiplied by a primordial Hydrogen fraction of $0.75$. All these considerations gives us hydrogen masses in the range $2.7\times 10^{8}-2.7\times 10^{9}$\Msun.\\
+Our aim is to provide a realistic baseline to compare against observations of LAEs at $z\sim 3$. It has been found by analysis of the abundance and angular correlation function that LAEs reside in DM halos of masses in the range $10^{10}-10^{11}$\Msun \cite{WalkerSoler2012}. This mass range corresponds to maximum circular velocities in the range $60-125$\kms and a median halo scale radius of $15$kpc. \footnote{These results were found using the  N-body data available in \url{www.cosmosim.org}}. \\
 
-CAMBIAR ESTOOOOO\\
+CAMBIAR ESTOOOOO (cambie 10E9 por 10E10)\\
 
-These choices give us a range for the number density of Hydrogen atoms of $4\times10^{-4}-4\times 10^{-3}$ atoms cm$^{-3}$. With a Lyman-$\alpha$ cross section at the line center of $\sigma_{H}=1.0\times 10^{-14}$ cm$^{2}$ we finally obtain that the optical depth from the cloud's center  should be in the range $\tau=2 \times 10^{5} - 2 \times 10^{6}$.  \\
+These galaxies have gas fractions close to $20\%$ \citep{Narayanan2012}. We approximate that the hydrogen content is $20\%$ the total baryonic content from the cosmological baryon to dark matter  abundances $\Omega_b/\Omega_{dm}=0.1825$ \citep{Planck2015}, multiplied by a primordial Hydrogen fraction of $0.75$. All these considerations gives us hydrogen masses in the range $2.7\times 10^{8}-2.7\times 10^{10}$\Msun.\\
 
-From these constraints we chose to model two kinds of central galaxies in the extremes of these distributions. The first has $\tau =2\times 10^5$ and a rotational velocity of $60$\kms. The second has $\tau=2\times 10^6$ and a rotational velocity of $125$\kms.\\
+These choices give us a range for the number density of Hydrogen atoms of $4\times10^{-4}-4\times 10^{-3}$ atoms cm$^{-3}$. With a Lyman-$\alpha$ cross section at the line center of $\sigma_{H}=1.0\times 10^{-14}$ cm$^{2}$ we finally obtain that the optical depth from the cloud's center  should be in the range $\tau_{\rm H}=2 \times 10^{5} - 2 \times 10^{7}$.  \\
 
-For the first stage there are two fixed parameters: the optical depth $\tau = 10^8$ and the galaxy viewing angle \ang = $90^\circ$. For the second stage there is one fixed parameter: the metallicity of the outflow $Z=-4.0$. This 3 fixed values are selected because the characteristics of observed LAEs, especially their low mass and their
-highest star formation rate of all. \\
+In order to be able to tell the influence of the rotation and outflow velocities in the \lya line morphology, a mapping of them is made without concerning of their physical meaning at first. The following ranges are selected for these parameters: \vrot in $0,100,200,300$ \kms and \vout in $100,200,300$ \kms.\\
 
-We have then 3 parameters left that are going to vary along a wide range. These are: the galaxy rotation velocity \vgal, the outflow hydrogen column density \nh and the outflow expanding velocity \vout.\\ 
+%From these constraints we chose to model two kinds of central galaxies in the extremes of these distributions. The first has $\tau =2\times 10^5$ and a rotational velocity of $60$\kms. The second has $\tau=2\times 10^6$ and a rotational velocity of $125$\kms.\\
 
-\vgal covers 3 different angles: $20$ \kms, $100$ \kms and $200$ \kms. \lognh takes 41 different values from $20.0$ to $22.5$. And \vout covers 5 equidistant velocities from $100$ \kms to $500$ \kms. The permutations of these three are analyzed in section \ref{sec:results}. \\
+%For the first stage there are two fixed parameters: the optical depth $\tau = 10^8$ and the galaxy viewing angle \ang = $90^\circ$. For the second stage there is one fixed parameter: the metallicity of the outflow $Z=-4.0$. This 3 fixed values are selected because the characteristics of observed LAEs, especially their low mass and their highest star formation rate of all. \\
 
-The results of this project consist of emulating a LAE spectrum basing on its physical characteristics defined by the 3 free parameters we stated before. When defined the combination of those three. \\
+%We have then 3 parameters left that are going to vary along a wide range. These are: the galaxy rotation velocity \vrot, the outflow hydrogen column density \nh and the outflow expanding velocity \vout.\\ 
 
-In the following subsection each free parameter is explained deeper. \\
+%\vrot covers 3 different angles: $20$ \kms, $100$ \kms and $200$ \kms. \lognh takes 41 different values from $20.0$ to $22.5$. And \vout covers 5 equidistant velocities from $100$ \kms to $500$ \kms. The permutations of these three are analyzed in section \ref{sec:results}. \\
 
-In order to study the influence of each of the three free parameters, we fix two of them and see how the final spectrum varies along the other one left. In each case we will state these changes. \\
+%The results of this project consist of emulating a LAE spectrum basing on its physical characteristics defined by the 3 free parameters we stated before. When defined the combination of those three. \\
 
-\subsection{Influence of the Galaxy Rotation Velocity: \vgal}
+%In the following subsection each free parameter is explained deeper. \\
+
+%In order to study the influence of each of the three free parameters, we fix two of them and see how the final spectrum varies along the other one left. In each case we will state these changes. \\
+
+\section{Results}
+
+\begin{figure}[h!]
+\begin{center}
+  \includegraphics[width=0.5\textwidth]{./figures/tau10E5.png}
+\end{center}
+\caption{\textbf{\lya profile for \tauh$=10^5$:} With \vrot ranging $0,100,200,300$ \kms and \vout ranging $100,200,300$ \kms.
+\label{fig:tau10E5}}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{center}
+  \includegraphics[width=0.5\textwidth]{./figures/tau10E6.png}
+\end{center}
+\caption{\textbf{\lya profile for \tauh$=10^6$:} With \vrot ranging $0,100,200,300$ \kms and \vout ranging $100,200,300$ \kms.
+\label{fig:tau10E6}}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{center}
+  \includegraphics[width=0.5\textwidth]{./figures/tau10E7.png}
+\end{center}
+\caption{\textbf{\lya profile for \tauh$=10^7$:} With \vrot ranging $0,100,200,300$ \kms and \vout ranging $100,200,300$ \kms.
+\label{fig:tau10E7}}
+\end{figure}
+
+\subsection{Influence of the Galaxy Rotation Velocity: \vrot}
 
 
-\subsection{Influence of the Galaxy Outflow Velocity: \vout }
+\subsection{Influence of the Galaxy Outflow Velocity: \vout}
 
 
-\subsection{Influence of the Galaxy Optical Depth: $\tau$ }
+\subsection{Influence of the Galaxy Optical Depth: \tauh}
 
 
 \subsection{Number of Peaks and Peaks Assymetry}
@@ -123,7 +146,7 @@ In order to study the influence of each of the three free parameters, we fix two
 \label{sec:discussion}
 
 ---------------------------------------------------------------------\\
-MISSING: \\
+TO ADD: \\
 - Comparison with some other result (probably observations).\\
 - Why is this result useful? \\
 - What possible implications can this model have?\\
@@ -197,7 +220,7 @@ J(x,b,\phi,i)=\frac{\sqrt{\pi}}{\sqrt{24}a\tau_0}\Bigg{(}\frac{(x-x_{\rm
 \subsection{Outflow Model: Thin Shell}
 
 We use an outflow model that follows the characteristics put described in \citep{Verhamme06} with the code presented in\citep{Orsi12}.  The outflow consists of an isothermal, spherical flow expanding at
-constant velocity \vel.  The outflow is empty inside the shell's inner radius $R_{in}$ and reaches out to an external radius $R_{out}$. The relationship between these two radii is parameterized by $R_{in} =
+constant velocity \vout.  The outflow is empty inside the shell's inner radius $R_{in}$ and reaches out to an external radius $R_{out}$. The relationship between these two radii is parameterized by $R_{in} =
 f_{th}R_{out}$, with $f_{th}=0.9$ as the fiducial value. The temperature of the medium is assumed constant and equal to $T=10^4 K$ which sets the velocity dispersion of Maxwell-Boltzmann distributions to $v_{\rm th}=12.84$\kms. \\
 
 The gas has an homogeneous Hydrogen number density inside the flow. The total mass inside the shell is parameterized by its column density\\
@@ -245,9 +268,9 @@ From these constraints we chose to model two kinds of central galaxies in the ex
 For the first stage there are two fixed parameters: the optical depth $\tau = 10^8$ and the galaxy viewing angle \ang = $90^\circ$. For the second stage there is one fixed parameter: the metallicity of the outflow $Z=-4.0$. This 3 fixed values are selected because the characteristics of observed LAEs, especially their low mass and their
 highest star formation rate of all. \\
 
-We have then 3 parameters left that are going to vary along a wide range. These are: the galaxy rotation velocity \vgal, the outflow hydrogen column density \nh and the outflow expanding velocity \vout. \\
+We have then 3 parameters left that are going to vary along a wide range. These are: the galaxy rotation velocity \vrot, the outflow hydrogen column density \nh and the outflow expanding velocity \vout. \\
 
-\vgal covers 3 different angles: $20$ \kms, $100$ \kms and $200$ \kms. \lognh takes 41 different values from $20.0$ to $22.5$. And \vout covers 5 equidistant velocities from $100$ \kms to $500$ \kms. The permutations of these three are analyzed in section \ref{sec:results}. \\ 
+\vrot covers 3 different angles: $20$ \kms, $100$ \kms and $200$ \kms. \lognh takes 41 different values from $20.0$ to $22.5$. And \vout covers 5 equidistant velocities from $100$ \kms to $500$ \kms. The permutations of these three are analyzed in section \ref{sec:results}. \\ 
 
 The results of this project consist of emulating a LAE spectrum basing on its physical characteristics defined by the 3 free parameters we stated before. When defined the combination of those three. \\
 
@@ -255,16 +278,16 @@ In the following subsection each free parameter is explained deeper. \\
 
 In order to study the influence of each of the three free parameters, we fix two of them and see how the final spectrum varies along the other one left. In each case we will state these changes.\\
 
-\subsection{Influence of the Galaxy Rotation Velocity: \vgal}
+\subsection{Influence of the Galaxy Rotation Velocity: \vrot}
 
-If one sets fixed outflow \vout and \lognh in each case the rotation velocity has the same effect: it increases proportionally the intensities. However this change is not that significant. The resulting spectra are completely the same, but enlarged vertically by a small factor. Fig. \ref{fig:influence_vgal} helps visualize this effect in a better way.\\
+If one sets fixed outflow \vout and \lognh in each case the rotation velocity has the same effect: it increases proportionally the intensities. However this change is not that significant. The resulting spectra are completely the same, but enlarged vertically by a small factor. Fig. \ref{fig:influence_vrot} helps visualize this effect in a better way.\\
 
 \begin{figure}[h!]
 \begin{center}
-  \includegraphics[width=0.5\textwidth]{./figures/inf_vgal_soft.png}
+	\includegraphics[width=0.5\textwidth]{./figures/inf_vgal_soft.png}
 \end{center}
 \caption{\textbf{Influence of Galaxy Rotation Velocity:} The values of the fixed parameters are \vout = $100$ \kms and \lognh = $20.9375$. The 3 possible velocities are shown in the plot with different line styles. The increase is visible as well as its small enlargement factor.\\
-\label{fig:influence_vgal}}
+\label{fig:influence_vrot}}
 \end{figure}
 
 \subsection{Influence of the Outflow Hydrogen Column Density: \lognh }
@@ -275,7 +298,7 @@ The effect of the \lognh is the creation of 2 peaks: the left one very thin, tal
 \begin{center}
   \includegraphics[width=0.5\textwidth]{./figures/inf_lognh_soft.png}
 \end{center}
-\caption{\textbf{Influence of Outflow Hydrogen Column Density:} The values of the fixed parameters are \vout = $100$ \kms and \vgal = $100$ \kms. There are three stages of the \lognh value shown: initial, intermediate and final, with the values shown on the plot.\\
+\caption{\textbf{Influence of Outflow Hydrogen Column Density:} The values of the fixed parameters are \vout = $100$ \kms and \vrot = $100$ \kms. There are three stages of the \lognh value shown: initial, intermediate and final, with the values shown on the plot.\\
 \label{fig:influence_lognH}}
 \end{figure}
 
@@ -287,7 +310,7 @@ The effect of this parameter consists in a shift of the initial spectrum in the 
 \begin{center}
   \includegraphics[width=0.5\textwidth]{./figures/inf_vout1_soft.png}
 \end{center}
-\caption{\textbf{Influence of Outflow Expanding Velocity:} The values of the fixed parameters are \lognh = 20.125 and \vgal = $100$ \kms.\\
+\caption{\textbf{Influence of Outflow Expanding Velocity:} The values of the fixed parameters are \lognh = 20.125 and \vrot = $100$ \kms.\\
 \label{fig:influence_vout1}}
 \end{figure}
 
@@ -295,7 +318,7 @@ The effect of this parameter consists in a shift of the initial spectrum in the 
 \begin{center}
   \includegraphics[width=0.5\textwidth]{./figures/inf_vout2_soft.png}
 \end{center}
-\caption{\textbf{Influence of Outflow Expanding Velocity:} The values of the fixed parameters are \lognh = 21.25 and \vgal = $100$ \kms.\\
+\caption{\textbf{Influence of Outflow Expanding Velocity:} The values of the fixed parameters are \lognh = 21.25 and \vrot = $100$ \kms.\\
 \label{fig:influence_vout2}}
 \end{figure}
 
