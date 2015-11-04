@@ -7,25 +7,18 @@
 
 \begin{document}
 
-\title{Titulo}
-\shorttitle{shorttitle}
+\title{Influence of galaxy rotation and outflows in the Lyman-$\alpha$ spectral line}
+\shorttitle{Influence of galaxy rotation and outflows in the Lyman-$\alpha$ spectral line}
 
 \shortauthors{Remolina-Gutierrez et al.}
 
-\author{Maria Camila Remolina-Gutierrez, Jaime E. Forero-Romero \&
-  Juan N. Garavito-Camargo} 
-\affil{Departamento de F\'{i}sica, Universidad de los Andes, Cra. 1
-No. 18A-10, Edificio Ip, Bogot\'a, Colombia}
-\author{Julian Mej\'ia}
-\affil{Chile}
-\author{Alvaro Orsi}
-\affil{Spain}
+\author{Maria Camila Remolina-Gutierrez, Jaime E. Forero-Romero \& Juan N. Garavito-Camargo} 
+\affil{Departamento de F\'{i}sica, Universidad de los Andes, Cra. 1 No. 18A-10, Edificio Ip, Bogot\'a, Colombia}
 \email{mc.remolina197@uniandes.edu.co}
 \email{je.forero@uniandes.edu.co}
 \email{jn.garavito57@uniandes.edu.co}
 
-\keywords{Galaxies: high-redshift, Lyman Alpha Emission, Galaxy
-  Rotation, Galaxy Outflows ....MISSING....}  
+\keywords{Galaxies: high-redshift, Lyman Alpha Emission, Galaxy Rotation, Galaxy Outflows, Radiative Transfer}  
 
 \begin{abstract}
 \noindent ------------------------------------------------------------------------------------------------------------------------------------\\
@@ -36,21 +29,35 @@ MISSING: The abstract\\
 \section{Introduction}
 \label{sec:intro}
 
-\cite{PartridgePeebles} predicted that young galaxies would have a strong Lyman Alpha (\lya) emission. Nowadays galaxies selected using the \lya line are known as Lyman Alpha Emitters (LAEs). Since the first observed LAE by \cite{DjorgovskiThompson} different teams have observed several LAEs \cite{Rhoads00,Gawiser2007,Koehler2007,Ouchi08,Yamada2012,Schenker2012,Kulas12, Yamada2012, Chonis2013,Finkelstein2013,Ostlin14} specially at $z\geq2$ since it is when the  line is redshifted into the optical regime.  LAEs became then a tool to explore the extragalactic Universe and with upcoming telescopes such as the James Webb Space Telescope, new ones are going to be discovered with a better resolution and at higher redshifts. This creates then, a clear motivation to model and observe them. \\
-  
-These observations have a direct impact in studying the reionization epoch \cite{review}, properties of the interstellar medium (ISM) and the intergalactic medium (IGM) \citep{Behrens13} \citep{DijkstraKramer}, constraining star formation rates of high redshift galaxies, understanding galaxy luminosity functions \cite{Max} and studying the large scale structure of the Universe. In all of these
-studies, an understanding of the processes that model the morphology and the radiate transfer process behind  of the \lya line, is required. To fully understand the observed spectra of the LAEs, these galaxies must be modeled. \\
+%1.1 Lyman alpha line
+%1.2 Models
+%1.3 Overview 
 
-However the resonant nature of the line makes this a challenging task. Analytical solutions for the outcoming spectra in simple ISM static geometries have been derived \cite{Adams72, Harrington73, Neufeld90, Dijkstra06}. Radiative transfer codes \citep{DijkstraKramer, Laursen09, Verhamme06, CLARA} have been developed in order to understand the effect of the gas kinematics in the \lya line. Special attention have been devoted to  the effects of clumpy media \citep{Hansen06} and expanding/contracting shell/spherical geometries started to be studied \citep{Ahn03,Verhamme06,Dijkstra06}. Recently, a rotation model, created by Garavito et al. \cite{Garavito14} models
-a rotating spherical galaxy with homogeneous gas mixture and analyzes that impact in the \lya line. Hydrodynamic simulations have studied the outcomming spectra of LAEs in large scale simulations \cite{Forero12}. And Monte Carlo codes have been used in hydrodynamic simulations to study in detail individual galaxies \citep{Laursen09,Barnes11,Verhamme12,Yajima12}.\\
+\subsection{The Lyman Alpha emission line}
 
-Special attention have been devoted to model the presence of outflows in the galaxy, motivated by previous observational studies. Outflows are a consequence of the interstellar medium (ISM) being ejected from the galaxy due to supernova explosions. Here different models have attempt to simulate more realistic situations involving shell models and cavities. \citep{Behrens2014}. Despite the fact that outflows have been broadly studied, rotation should also be present in this galaxies. The joint effect of the above properties should have a direct impact on the morphology of the \lya line. This is the subject of this work. \\
+The Lyman Alpha ( \lya) emission line is the spectral line produced by an excited hydrogen atom when its electron jumps from the second energy level to the first one. This fall causes an emission of a photon with a corresponding wavelenght of $1215.67$ $\AA$. The whole Lyman series was discovered in 1906 by the american physicist Theodore Lyman. \\
+
+%(TESIS) se extiende como se descubrió, formula, etc
+
+In 1967 \cite{PartridgePeebles} predicted that young galaxies would have a strong \lya  emission. Nowadays galaxies selected using the \lya line are known as Lyman Alpha Emitters (LAEs). Since the first observed LAE by \cite{DjorgovskiThompson} different teams have observed several LAEs \citep{Rhoads00,Gawiser2007,Koehler2007,Ouchi08,Yamada2012,Schenker2012,Kulas12, Yamada2012, Chonis2013,Finkelstein2013,Ostlin14,Hayes2014,Faisst2014, Fumagalli2015} specially at $z\geq2$ since it is when the  line is redshifted into the optical regime. LAEs became then a tool to explore the extragalactic Universe and with upcoming telescopes such as the James Webb Space Telescope, new ones are going to be discovered with a better resolution and at higher redshifts. This creates a clear motivation to model them and observe them. \\
+
+As for motivation, these observations have a direct impact in studying the reionization epoch \cite{review}, properties of the interstellar medium (ISM) and the intergalactic medium (IGM) \citep{Behrens13} \citep{DijkstraKramer}, constraining star formation rates of high redshift galaxies, understanding galaxy luminosity functions \cite{Max} and studying the large scale structure of the Universe. In all of these studies, an understanding of the processes that model the morphology and radiate transfer process behind the \lya line, is required. To fully understand the observed spectra of the LAEs, these galaxies must be modeled. \\
+
+\subsection{Existing models of Lyman Alpha Emitters}
+
+The resonant nature of the \lya line makes modelling it a challenging task, but constraining the nature of LAEs using the line is a common and strong objective. Analytical solutions for the outcoming spectra in simple ISM static geometries have been derived \citep{Adams72, Harrington73, Neufeld90, Dijkstra06}. Radiative transfer codes \citep{DijkstraKramer, Laursen09, Verhamme06, CLARA} have been developed in order to understand the effect of the gas kinematics in the \lya line. Special attention have been devoted to  the effects of clumpy media \citep{Hansen06} and expanding/contracting shell/spherical geometries started to be studied \citep{Ahn03,Verhamme06,Dijkstra06}. Hydrodynamic simulations have studied the outcomming spectra of LAEs in large scale simulations \cite{Forero12}. Escape of \lya photons at the line center is also a proposed model that fits the observations in a more accurate way \citep{Martin2015, Garavito14, Neufeld91}. And Monte Carlo codes have been used in hydrodynamic simulations to study in detail individual galaxies \citep{Laursen09,Barnes11,Verhamme12,Yajima12}.\\
+
+Special attention have been devoted to model the presence of outflows in these galaxies, motivated by previous observational studies. Outflows are a consequence of the interstellar medium (ISM) being ejected from the galaxy due to supernova explosions. Here different models have attempt to simulate more realistic situations involving shell models and cavities \citep{Behrens2014}. Blue wings and bumps have been modeled when the outflows regulating the escape of \lya photons are still engulfed within a static interstellar medium \citep{Chung2015}. \cite{Verhamme06} created an expanding shell model that despite its geometric simplicity, has been able to fit several \lya profiles including: observational, as the ones studied by \cite{Hashimoto2015} who reproduced the sources \lya lines and calculated their outflow velocities, and simulated, as the ones created by \cite{Gronke2015} who determined if degeneracies exist between the different shell model parameters. Also, \cite{Orsi12} creates a wind shell model that could be interpreted as an expanding sphere. \cite{Rivera-Thorsen2015} found that no one single effect dominates in governing \lya radiative transfer and escape, and that \lya peak velocities are consistent with a simple model of an intrinsic emission line overlaid by a blueshifted absorption profile from the outﬂowing wind.\\
+
+Despite the fact that outflows have been broadly studied, rotation should also be present in these galaxies. Recently, a rotation model, created by Garavito et al. \cite{Garavito14} models a rotating spherical galaxy with homogeneous gas mixture and analyzes that impact in the \lya line. However not a lot of attention has been payed to this effect in LAEs.\\
+
+The joint effect of the above properties should have a direct impact on the morphology of the \lya line. This is the subject of this work. \\
+
+\subsection{Paper Overview}
 
 We propose a simplified model in which the galaxy is modeled as an sphere undergoing solid-body rotation, with an homogeneous mixture of dust and hydrogen at a constant temperature, that is also expanding in the radial direction due to outflows. In this model the optical depth \tauh, the  rotation velocity \vrot and the outflow velocity \vout are free parameters. \\
- 
-CAMBIAR ESTOOOOO\\ 
- 
-This paper is structured as follows. In \S \ref{sec:theo} we explain in detail the model of rotation and outflow that we use as well and our joint model (Rotation \& Outflow). In \S \ref{sec:results} we present the results of our model. In \S \ref{sec:discussion} we compare our results with recent observations of LAEs with special attention of those morphologies that present features of galaxy rotation and outflows. In the latest section we present our conclusions.  \\
+
+This paper is structured as follows. In \S \ref{sec:theo} we explain in detail the model of rotation and outflow that we use. In \S \ref{sec:results} we present the results of our model, specially how the morphology of the line changes with the free parameters. In \S \ref{sec:discussion} we compare our results with a recent observation of a LAE. In the latest section \S \ref{sec:conclusions} we present our conclusions and possible future work. Finally, in the appendix, we present the results of a \lya modeled only with the rotation analytical soution by \cite{Garavito14} that then is filtered by a \cite{Verhamme06} expanding shell.\\
 
 \section{Theoretical Background}
 \label{sec:theo}
@@ -84,9 +91,9 @@ Our aim is to provide a realistic baseline to compare against observations of LA
 
 CAMBIAR ESTOOOOO (cambie 10E9 por 10E10)\\
 
-These galaxies have gas fractions close to $20\%$ \citep{Narayanan2012}. We approximate that the hydrogen content is $20\%$ the total baryonic content from the cosmological baryon to dark matter  abundances $\Omega_b/\Omega_{dm}=0.1825$ \citep{Planck2015}, multiplied by a primordial Hydrogen fraction of $0.75$. All these considerations gives us hydrogen masses in the range $2.7\times 10^{8}-2.7\times 10^{10}$\Msun.\\
+These galaxies have gas fractions close to $20\%$ \citep{Narayanan2012}. We approximate that the hydrogen content is $20\%$ the total baryonic content from the cosmological baryon to dark matter  abundances $\Omega_b/\Omega_{dm}=0.1825$ \citep{Planck2015}, multiplied by a primordial Hydrogen fraction of $0.75$. All these considerations gives us hydrogen masses in the range $2.7\times 10^{8}-2.7\times 10^{9}$\Msun.\\
 
-These choices give us a range for the number density of Hydrogen atoms of $4\times10^{-4}-4\times 10^{-3}$ atoms cm$^{-3}$. With a Lyman-$\alpha$ cross section at the line center of $\sigma_{H}=1.0\times 10^{-14}$ cm$^{2}$ we finally obtain that the optical depth from the cloud's center  should be in the range $\tau_{\rm H}=2 \times 10^{5} - 2 \times 10^{7}$.  \\
+These choices give us a range for the number density of Hydrogen atoms of $4\times10^{-4}-4\times 10^{-3}$ atoms cm$^{-3}$. With a Lyman-$\alpha$ cross section at the line center of $\sigma_{H}=1.0\times 10^{-14}$ cm$^{2}$ we finally obtain that the optical depth from the cloud's center  should be in the range $\tau_{\rm H}=2 \times 10^{5} - 2 \times 10^{6}$.  \\
 
 In order to be able to tell the influence of the rotation and outflow velocities in the \lya line morphology, a mapping of them is made without concerning of their physical meaning at first. The following ranges are selected for these parameters: \vrot in $0,100,200,300$ \kms and \vout in $100,200,300$ \kms.\\
 
@@ -105,6 +112,7 @@ In order to be able to tell the influence of the rotation and outflow velocities
 %In order to study the influence of each of the three free parameters, we fix two of them and see how the final spectrum varies along the other one left. In each case we will state these changes. \\
 
 \section{Results}
+\label{sec:results}
 
 \begin{figure}[h!]
 \begin{center}
@@ -158,7 +166,7 @@ Here goes the conclusions....
 
 \section*{Acknowledgments}
 
-We acknowledge Alvaro Orsi and Julian Mejia for collaborating with us offering their time, advice and especially data. We used their outflow simulations in order to get our results.\\
+We acknowledge Alvaro Orsi and Julian Mejia for collaborating with us offering their time, advice and especially data. We used their outflow simulations in order to get our results in the appendix.\\
 
 The data, source code and instructions to replicate the results of this paper can be found here {\texttt{https://github.com/mariacamilaremolinagutierrez/ LymanAlpha/}}.
 Most of our code benefits from the work of the IPython and Matplotlib communities \citep{IPython,matplotlib}.\\
